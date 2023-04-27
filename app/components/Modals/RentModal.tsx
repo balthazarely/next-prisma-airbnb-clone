@@ -6,13 +6,9 @@ import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import dynamic from "next/dynamic";
 import { useRouter } from "next/navigation";
 import { useMemo, useState } from "react";
-
 import useRentModal from "@/hooks/useRentModal";
 import { Input, Heading, Modal } from "@/components/UI";
-// import Counter from "../inputs/Counter";
-// import CategoryInput from "../inputs/CategoryInput";
-// import CountrySelect from "../inputs/CountrySelect";
-// import ImageUpload from "../inputs/ImageUpload";
+import { CategoryInput, CountrySelect } from "@/components/UI/inputs";
 import { categories } from "../Navigaton/Categories/Categories";
 
 enum STEPS {
@@ -139,7 +135,7 @@ const RentModal = () => {
           md:grid-cols-2
         "
       >
-        {/* {categories.map((item) => (
+        {categories.map((item) => (
           <div key={item.label} className="col-span-1">
             <CategoryInput
               onClick={(category) => setCustomValue("category", category)}
@@ -148,7 +144,7 @@ const RentModal = () => {
               icon={item.icon}
             />
           </div>
-        ))} */}
+        ))}
       </div>
     </div>
   );
@@ -160,11 +156,13 @@ const RentModal = () => {
           title="Where is your place located?"
           subtitle="Help guests find you!"
         />
-        {/* <CountrySelect
+        <CountrySelect
           value={location}
           onChange={(value) => setCustomValue("location", value)}
         />
-        <Map center={location?.latlng} /> */}
+        {/*
+        <Map center={location?.latlng} /> 
+      */}
       </div>
     );
   }

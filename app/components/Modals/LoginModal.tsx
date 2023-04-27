@@ -104,7 +104,7 @@ const LoginModal = () => {
         "
       >
         <p>
-          First time using?
+          First time using Airbnb?
           <span
             onClick={onToggle}
             className="
